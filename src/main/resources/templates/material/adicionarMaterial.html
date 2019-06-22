@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head th:replace="fragments/head :: head"></head>
+<body>
+	<header th:replace="fragments/header :: header"></header>
+	<div th:replace="fragments/menu :: menu"></div>
+
+	<div class="container adicionar-colaboradores">
+		<h3>Adicionar Material</h3>
+		<span>Informacoes do material</span>
+		<br/><br/>
+		<form th:action="@{/material/criarMaterial}" th:object="${material}" method="POST">
+			<div class="form-group">
+				<input type="text" class="form-control" required id="nome" placeholder="Digite o nome" th:field="*{nome}">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" required id="tipo" placeholder="Digite o tipo" th:field="*{tipo}">
+			</div>
+			<button type="submit" class="btn btn-primary">Adicionar material</button>
+		</form>
+	</div>
+	
+	<div th:replace="fragments/scripts :: scripts"></div>
+</html>

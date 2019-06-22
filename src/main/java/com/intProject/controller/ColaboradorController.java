@@ -40,7 +40,7 @@ public class ColaboradorController {
 		return listarColaboradores();
 	}
 
-	@GetMapping("/excluirColaborador")
+	@GetMapping("/excluirColaborador/{id}")
 	public ModelAndView excluir(@PathVariable("id") Integer id) {
 		colaboradorService.excluir(id);
 		return listarColaboradores();

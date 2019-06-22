@@ -20,7 +20,7 @@ public class MaterialController {
 	@Autowired
 	MaterialService materialService;
 
-	@GetMapping("/Materiais")
+	@GetMapping("/materiais")
 	public ModelAndView listarMateriais() {
 		ModelAndView mv = new ModelAndView("material/materiais");
 		mv.addObject("materiais", materialService.listar());
@@ -40,7 +40,7 @@ public class MaterialController {
 		return listarMateriais();
 	}
 
-	@GetMapping("/excluirMaterial")
+	@GetMapping("/excluirMaterial/{id}")
 	public ModelAndView excluir(@PathVariable("id") Integer id) {
 		materialService.excluir(id);
 		return listarMateriais();

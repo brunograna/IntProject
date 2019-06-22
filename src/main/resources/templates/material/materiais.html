@@ -4,35 +4,34 @@
 	<body>		
 		<header th:replace="fragments/header :: header"></header>
 		<div th:replace="fragments/menu :: menu"></div>
-
 		
 		<div class="container projetos">
 
-			<h3 class="">Ordens de servico</h3>
-			<a th:href="@{/ordemServico/adicionarOrdemServico}">
-				<button type="button" class="btn btn-primary"><i class="material-icons">add_box</i>Adicionar OS</button>
+			<h3 class="">Listagem de Materiais</h3>
+			<a th:href="@{/material/adicionarMaterial}">
+				<button type="button" class="btn btn-primary"><i class="material-icons">add_box</i>Adicionar Material</button>
 			</a>
 
 			<table class="table table-bordered">
 				<thead>
 					<tr>
 					<th scope="col">Id</th>
-					<th scope="col">Local</th>
-					<th scope="col">Contratado</th>
+					<th scope="col">Nome</th>
+					<th scope="col">Tipo</th>
 					<th scope="col">Acoes</th>
 					</tr>
 				</thead>
 				<tbody>
-					<th:block th:each="ordem : ${ordensServico}">
-						<tr th:id="${ordem.id}">
-							<th scope="row" th:text="${ordem.id}"></th>
-							<td th:text="${ordem.local}"></td>
-							<td th:text="${ordem.contratado}"></td>
+					<th:block th:each="material : ${materiais}">
+						<tr th:id="${material.id}">
+							<th scope="row" th:text="${material.id}"></th>
+							<td th:text="${material.nome}"></td>
+							<td th:text="${material.tipo}"></td>
 							<td>
-								<a th:href="@{/ordemServico/editarOrdemServico/__${ordem.id}__}">
+								<a th:href="@{/material/editarMaterial/__${material.id}__}">
 									<i class="material-icons">edit</i>
 								</a>
-								<a th:href="@{/ordemServico/excluirOrdemServico/__${ordem.id}__}" class="modal-delete-ordem" data-toggle="modal" data-target="#exluirModal">
+								<a th:href="@{/material/excluirMaterial/__${material.id}__}" class="modal-delete-ordem" data-toggle="modal" data-target="#exluirModal">
 									<i class="material-icons">delete</i>
 								</a>
 							</td>

@@ -40,7 +40,7 @@ public class OrdemServicoController {
 		return listarOrdensServico();
 	}
 
-	@GetMapping("/excluirOrdemServico")
+	@GetMapping("/excluirOrdemServico/{id}")
 	public ModelAndView excluir(@PathVariable("id") Integer id) {
 		ordemServicoService.excluir(id);
 		return listarOrdensServico();

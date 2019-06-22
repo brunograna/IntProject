@@ -40,7 +40,7 @@ public class ProjetoController {
 		return listarProjetos();
 	}
 
-	@GetMapping("/excluirProjeto")
+	@GetMapping("/excluirProjeto/{id}")
 	public ModelAndView excluir(@PathVariable("id") Integer id) {
 		projetoService.excluir(id);
 		return listarProjetos();
