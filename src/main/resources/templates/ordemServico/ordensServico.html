@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br" >
+	<head th:replace="fragments/head :: head"></head>	
+	<body>		
+		<header th:replace="fragments/header :: header"></header>
+		<div th:replace="fragments/menu :: menu"></div>
+
+		
+		<div class="container projetos">
+
+			<h3 class="">Ordens de serviço</h3>
+			<a th:href="@{/ordemServico/adicionarOrdemServico}">
+				<button type="button" class="btn btn-primary"><i class="material-icons">add_box</i>Adicionar OS</button>
+			</a>
+
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+					<th scope="col">Id</th>
+					<th scope="col">Local</th>
+					<th scope="col">Projeto</th>
+					<th scope="col">Ações</th>
+					</tr>
+				</thead>
+				<tbody>
+					<th:block th:each="ordem : ${ordensServico}">
+						<tr>
+							<th scope="row" th:text="${ordem.id}"></th>
+							<td th:text="${ordem.local}"></td>
+							<td th:text="${ordem.projeto.nome}"></td>
+							<td>
+								<a th:href="@{editarOrdemServico/__${ordem.id}__}">
+									<i class="material-icons">edit</i>
+								</a>
+								<a th:href="@{excluirOrdemServico/(id=${ordem.id})}" class="" data-toggle="modal" data-target="#exluirModal">
+									<i class="material-icons">delete</i>
+								</a>
+							</td>
+						</tr>
+					</th:block>
+				</tbody>
+			</table>
+		</div>
+
+
+
+
+		<div class="modal fade" id="exluirModal" tabindex="-1" role="dialog" aria-labelledby="exluirModal" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-body">
+					Tem certeza que deseja excluir?
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Sim</button>
+						<button type="button" class="btn btn-primary">Não</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html> 

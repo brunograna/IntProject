@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head th:replace="fragments/head :: head"></head>
+<body>
+	<header th:replace="fragments/header :: header"></header>
+	<div th:replace="fragments/menu :: menu"></div>
+
+	<div class="container adicionar-servicos">
+		<h3>Adicionar/Editar Ordem de Serviço</h3>
+		<span>informações da OS</span>
+
+		<form>
+			<div class="row">
+				<div class="col-6">
+
+					<div class="form-row form-group">
+
+						<div class="col-6">
+							<select class="form-control" id="projetos">
+								<option value="" disabled selected>Projeto</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+
+						<div class="col-6">
+							<input type="password" class="form-control" id="local"
+								placeholder="Digite o local">
+						</div>
+					</div>
+
+					<div class="form-row form-group py-4">
+
+						<div class="col-6">
+							<!-- <label for="data-inicio">Data início</label> -->
+							<input type="date" class="form-control" id="data-inicio">
+						</div>
+
+						<div class="col-6">
+							<!-- <label for="data-termino">Data término</label> -->
+							<input type="date" class="form-control" id="data-termino">
+						</div>
+					</div>
+
+					<div class="form-row form-group">
+						<div class="col-6">
+							<select class="form-control" id="contratista">
+								<option value="" disabled selected>Contratista</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+						<div class="col-6">
+							<select class="form-control" id="status">
+								<option value="" disabled selected>Status</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="col-6 colaboradores p-4">
+					<div class="form-group">
+						<label for="colaborador">Colaborador</label> <select
+							class="form-control" id="colaborador">
+							<option value="" disabled selected>Escolher colaborador</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+						</select>
+					</div>
+					<div class="">
+						<h6>Informações do colaborador selecionado</h6>
+						Nome: <span id="">nome X</span><br /> Sobrenome: <span id="">Sobreome
+							X</span><br /> Telefone: <span id="">(11) 9 2233-4455</span>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="form-group form-row">
+						<label for="materiais" class="col-12">Gerenciar Materiais</label>
+						<div class="col-6">
+							<select class="form-control" id="materiais">
+								<option value="" disabled selected>Escolher material</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+						<button type="button" class="btn btn-primary col-3">Adicionar</button>
+					</div>
+
+					<div class="lista-materiais">
+						<h6>Listagem de materiais associadas a OS</h6>
+					</div>
+					<table class="table table-bordered os-table">
+						<tbody>
+							<tr>
+								<td colspan="2">Nome do material</td>
+								<td><a href="#" class="trash-icon"><i
+										class="material-icons">delete</i></a></td>
+							</tr>
+							<tr>
+								<td colspan="2">Nome do material</td>
+								<td><a href="#" class="trash-icon"><i
+										class="material-icons">delete</i></a></td>
+							</tr>
+							<tr>
+								<td colspan="2">Nome do material</td>
+								<td><a href="#" class="trash-icon"><i
+										class="material-icons">delete</i></a></td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="custom-file">
+						<input type="file" class="custom-file-input" id="customFile">
+						<label class="custom-file-label" for="customFile">Escolha
+							o arquivo</label>
+					</div>
+				</div>
+				<div class="col-6 px-0">
+					<div class="form-group mt-4">
+						<textarea class="form-control" id="descricao" rows="10"
+							placeholder="Descrição"></textarea>
+					</div>
+				</div>
+
+				<button type="submit" class="btn btn-primary d-table ml-auto">Adicionar
+					OS</button>
+		</form>
+	</div>
+
+	<div class="modal fade" id="exluirModal" tabindex="-1" role="dialog"
+		aria-labelledby="exluirModal" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-body">Tem certeza que deseja excluir?</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Sim</button>
+					<button type="button" class="btn btn-primary">Não</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</html>

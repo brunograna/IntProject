@@ -1,0 +1,54 @@
+<div class="collapse bg-dark menu-lateral" id="navbar-lateral" th:fragment="menu">
+	<h4>
+		<i class="material-icons">format_list_bulleted</i>
+		Itens do menu
+	</h4>
+
+	<nav class="navbar bg-dark p-4">
+		<ul>
+			<li>
+				<i class="material-icons">bookmark</i>
+				<a href="projetos.html">Projetos </a>
+				<a class="" data-toggle="collapse" href="#funcoes-projetos" role="button" aria-expanded="false" aria-controls="funcoes-projetos">
+		    		<i class="material-icons">arrow_drop_down</i>
+			  	</a>
+			  	<div id="funcoes-projetos" class="collapse">
+					<a href="projetos-adicionar.html">Adicionar</a>
+			  	</div>
+			</li>
+
+			<li>
+				<i class="material-icons">archive</i>
+				<a href="materiais.html">materiais</a>
+				<a class="" data-toggle="collapse" href="#funcoes-materiais" role="button" aria-expanded="false" aria-controls="funcoes-materiais">
+		    		<i class="material-icons">arrow_drop_down</i>
+			  	</a>
+			  	<div id="funcoes-materiais" class="collapse">
+					<a href="materiais-adicionar.html">Adicionar</a>
+			  	</div>
+			</li>
+
+			<li>
+				<i class="material-icons">perm_identity</i>
+				<a href="colaboradores.html">Colaboradores</a>
+				<a class="" data-toggle="collapse" href="#funcoes-colaboradores" role="button" aria-expanded="false" aria-controls="funcoes-colaboradores">
+		    		<i class="material-icons">arrow_drop_down</i>
+			  	</a>
+			  	<div id="funcoes-colaboradores" class="collapse">
+			  		<a href="colaboradores-adicionar.html">Adicionar</a>
+			  	</div>
+			</li>
+
+			<li>
+				<i class="material-icons">room_service</i>
+				<a th:href="@{/ordemServico/ordensServico}"> Ordem de serviço</a> 
+				<a class="" data-toggle="collapse" href="#funcoes-servico" role="button" aria-expanded="false" aria-controls="funcoes-servico">
+		    		<i class="material-icons">arrow_drop_down</i>
+			  	</a>
+			  	<div id="funcoes-servico" class="collapse">
+					<a th:href="@{/ordemServico/adicionarOrdemServico}">Adicionar</a>
+			  	</div>
+			</li>
+		</ul>
+	</nav>
+</div>

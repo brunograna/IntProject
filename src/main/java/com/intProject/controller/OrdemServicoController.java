@@ -29,7 +29,7 @@ public class OrdemServicoController {
 
 	@GetMapping("/adicionarOrdemServico")
 	public ModelAndView add() {
-		ModelAndView mv = new ModelAndView("ordemServico/adcionarOrdemServico");
+		ModelAndView mv = new ModelAndView("ordemServico/adicionarOrdemServico");
 		mv.addObject("ordemServico", new OrdemServico());
 		return mv;
 	}
